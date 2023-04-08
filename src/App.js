@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import Pokemonapi from "./components/Pokemonapi/Pokemonapi";
 
-function App() {
+const App = () => {
+  //estado y funciones para obtener el listado de pokemons (o pokemones) aqui.
+  const [show, setShow] = useState(false);
+  const mostar = () => {
+    setShow(!show);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container" style={{marginLeft:'45%'}}>
+        <button onClick={() => mostar()} style={{backgroundColor:'gray', color:'white'}}>
+        Fetch Pokemon
+        </button>
+        {show && <Pokemonapi />}
     </div>
-  );
+    )
 }
-
 export default App;
