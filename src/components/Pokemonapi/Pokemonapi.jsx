@@ -18,11 +18,13 @@ const Pokemonapi = () => {
 
     return (
         <div style={{margin:'auto'}}>
+           <ul>
                 {
                     pokemones.map((pokemon, index) =>{
                     return <li key={index}>{pokemon.name}</li> 
                     })
                 }
+            </ul>
         </div>
     )
 }
